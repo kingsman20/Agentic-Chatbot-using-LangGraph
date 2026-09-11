@@ -54,7 +54,7 @@ flowchart LR
 
 ## Prerequisites
 
-- Python 3.11 or 3.12 (not 3.14 — several packages, including `pydantic`, do not support it yet)
+- Python 3.11 or 3.12 locally. Streamlit Community Cloud currently defaults to Python 3.14; this project's `requirements.txt` is compatible with that.
 - API keys (free tiers are enough for testing):
   - [Google Gemini](https://aistudio.google.com/apikey) (`GOOGLE_API_KEY`) **or** [OpenAI](https://platform.openai.com/api-keys) (`OPENAI_API_KEY`)
   - [Tavily](https://tavily.com/) (`TAVILY_API_KEY`)
@@ -134,7 +134,7 @@ This is the fastest hosted option for a Streamlit app.
 3. Click **Create app** and select your repo.
 4. Set:
    - **Main file path:** `streamlit_app.py`
-   - **Python version:** 3.11 (also listed in `runtime.txt`)
+   - **Python version:** 3.11 or 3.12 in **Advanced settings** (Community Cloud ignores `runtime.txt`; if you leave the default, it may use 3.14, which this repo also supports)
 5. Open **Advanced settings → Secrets** and paste the same keys as `.env`, using TOML:
 
 ```toml
