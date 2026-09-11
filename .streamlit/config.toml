@@ -1,0 +1,27 @@
+[browser]
+gatherUsageStats = false
+
+[client]
+showSidebarNavigation = true
+
+[theme]
+base = "dark"
+primaryColor = "#7c9cff"
+backgroundColor = "#0b1220"
+secondaryBackgroundColor = "#151d30"
+textColor = "#e8edf8"
+font = "sans serif"
+
+[server]
+headless = true
+# SQLite and FAISS write files while the chatbot runs. If Streamlit watches
+# those files, it reruns the app forever and the top-right running icon spins.
+folderWatchBlacklist = [
+    "**/chatbot.db",
+    "**/chatbot.db-wal",
+    "**/chatbot.db-shm",
+    "**/faiss_db",
+    "**/faiss_db_*",
+    "**/.venv",
+    "**/__pycache__",
+]
